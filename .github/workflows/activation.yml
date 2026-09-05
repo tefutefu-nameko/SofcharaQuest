@@ -1,0 +1,24 @@
+name: Acquire Unity License (Custom)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  activation:
+    name: Generate AL file
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-2022.3.2f1-webgl-3
+    steps:
+      - name: Request Manual Activation File
+        run: |
+          # Run Unity in batch mode to generate the license request file
+          unity-editor -batchmode -nographics -createManualActivationFile ./Unity_v2022.alf -quit || true
+          
+          # Check if the file was created (Unity exits with code 1 after generating file usually, so we use || true)
+          ls -la ./Unity_v2022.alf
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Unity_v2022.alf
+          path: ./Unity_v2022.alf

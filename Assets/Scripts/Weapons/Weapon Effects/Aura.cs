@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +37,7 @@ public class Aura : WeaponEffect
                     Weapon.Stats stats = weapon.GetStats();
                     affectedTargets[pair.Key] = stats.cooldown;
                     pair.Key.TakeDamage(GetDamage(), transform.position, stats.knockback);
+                    OnDamageDealt();
                 }
             }
         }
