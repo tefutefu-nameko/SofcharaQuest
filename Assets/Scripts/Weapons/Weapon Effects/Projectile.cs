@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -96,6 +96,7 @@ public class Projectile : WeaponEffect
 
             // Deals damage and destroys the projectile.
             es.TakeDamage(GetDamage(), source);
+            OnDamageDealt();
 
             Weapon.Stats stats = weapon.GetStats();
             piercing--;

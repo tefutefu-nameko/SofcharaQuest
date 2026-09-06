@@ -16,6 +16,8 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: 3ab6d546750f3e94eae071ac81313509, type: 2}
   name: "\u3081\u3082\u308A"
   startingWeapon: {fileID: 11400000, guid: ea9dff3d56046de44944672e3dd6ea69, type: 2}
+  specialMoveCutin: {fileID: 21300000, guid: 986dea45e0a43b749a954ca6bf92d65f, type: 3}
+  specialMoveGaugeMultiplier: 1
   stats:
     maxHealth: 800
     recovery: 0
@@ -23,3 +25,4 @@ MonoBehaviour:
     might: 1
     speed: 1
     magnet: 1
+    cooldown: 1

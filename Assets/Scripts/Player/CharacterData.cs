@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +19,15 @@ public class CharacterData : ScriptableObject
     [SerializeField]
     WeaponData startingWeapon;
     public WeaponData StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
+
+    [Header("Special Move")]
+    [SerializeField]
+    Sprite specialMoveCutin;
+    public Sprite SpecialMoveCutin { get => specialMoveCutin; private set => specialMoveCutin = value; }
+
+    [SerializeField]
+    float specialMoveGaugeMultiplier = 1f;
+    public float SpecialMoveGaugeMultiplier { get => specialMoveGaugeMultiplier; private set => specialMoveGaugeMultiplier = value; }
 
     [System.Serializable]
     public struct Stats

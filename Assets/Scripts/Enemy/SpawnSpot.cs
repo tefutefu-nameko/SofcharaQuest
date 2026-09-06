@@ -4,13 +4,13 @@ using System.Collections;
 public class SpawnSpot : MonoBehaviour
 {
     [Header("Spawn Settings")]
-    public GameObject enemyPrefab;   // —N‚©‚¹‚é“GƒvƒŒƒnƒu
-    public int spawnCount = 3;       // ˆê“x‚É—N‚©‚¹‚é”
-    public float cooldown = 10f;     // ƒN[ƒ‹ƒ^ƒCƒ€•b
+    public GameObject enemyPrefab;   // æ¹§ã‹ã›ã‚‹æ•µãƒ—ãƒ¬ãƒãƒ–
+    public int spawnCount = 3;       // ä¸€åº¦ã«æ¹§ã‹ã›ã‚‹æ•°
+    public float cooldown = 10f;     // ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ç§’
 
     [Header("Donut Range Settings (player-centered)")]
-    public float innerRadius = 8f;   // ƒvƒŒƒCƒ„[‚©‚ç‹ß‚·‚¬‚é”ÍˆÍ‚ğœŠO
-    public float outerRadius = 15f;  // ƒvƒŒƒCƒ„[‚©‚ç‚ÌÅ‘å”ÍˆÍ
+    public float innerRadius = 8f;   // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‹ã‚‰è¿‘ã™ãã‚‹ç¯„å›²ã‚’é™¤å¤–
+    public float outerRadius = 15f;  // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‹ã‚‰ã®æœ€å¤§ç¯„å›²
 
     private Transform player;
     private bool isOnCooldown = false;
@@ -24,7 +24,7 @@ public class SpawnSpot : MonoBehaviour
         }
         else
         {
-            Debug.LogError("[SpawnSpot] Playerƒ^ƒO‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñBƒvƒŒƒCƒ„[‚É\"Player\"ƒ^ƒO‚ğ•t‚¯‚Ä‚­‚¾‚³‚¢B");
+            Debug.LogError("[SpawnSpot] Playerã‚¿ã‚°ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«\"Player\"ã‚¿ã‚°ã‚’ä»˜ã‘ã¦ãã ã•ã„ã€‚");
         }
     }
 
@@ -32,7 +32,7 @@ public class SpawnSpot : MonoBehaviour
     {
         if (player == null || isOnCooldown) return;
 
-        // ƒvƒŒƒCƒ„[’†S‚Ì‹——£”»’è
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä¸­å¿ƒã®è·é›¢åˆ¤å®š
         float dist = Vector3.Distance(player.position, transform.position);
 
         if (dist >= innerRadius && dist <= outerRadius)
@@ -43,22 +43,22 @@ public class SpawnSpot : MonoBehaviour
 
     IEnumerator SpawnAndCooldown()
     {
-        // “G‚ğˆê’è”—N‚©‚¹‚é
+        // æ•µã‚’ä¸€å®šæ•°æ¹§ã‹ã›ã‚‹
         for (int i = 0; i < spawnCount; i++)
         {
-            Vector3 offset = Random.insideUnitSphere * 2f; // ”¼Œa2‚Ìƒ‰ƒ“ƒ_ƒ€ˆÊ’u
-            offset.y = 0; // ’n–Ê‚É‰ˆ‚í‚¹‚é
+            Vector3 offset = Random.insideUnitSphere * 2f; // åŠå¾„2ã®ãƒ©ãƒ³ãƒ€ãƒ ä½ç½®
+            offset.y = 0; // åœ°é¢ã«æ²¿ã‚ã›ã‚‹
             Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
         }
 
 
-        // ƒN[ƒ‹ƒ^ƒCƒ€ŠJn
+        // ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ é–‹å§‹
         isOnCooldown = true;
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
     }
 
-    // ƒGƒfƒBƒ^‚Å”ÍˆÍ‚ğ‰Â‹‰»iƒvƒŒƒCƒ„[’†S‚Å‚Í‚È‚­ƒXƒ|ƒbƒgˆÊ’u‚É•`‚©‚ê‚é‚Ì‚Å’ˆÓj
+    // ã‚¨ãƒ‡ã‚£ã‚¿ã§ç¯„å›²ã‚’å¯è¦–åŒ–ï¼ˆãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä¸­å¿ƒã§ã¯ãªãã‚¹ãƒãƒƒãƒˆä½ç½®ã«æã‹ã‚Œã‚‹ã®ã§æ³¨æ„ï¼‰
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
