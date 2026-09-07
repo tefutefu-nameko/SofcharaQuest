@@ -207,6 +207,12 @@ public class PlayerStats : MonoBehaviour
     public float invincibilityDuration;
     float invincibilityTimer;
     bool isInvincible;
+    bool isSpecialMoveInvincible; // 必殺技用無敵フラグ
+
+    public void SetSpecialMoveInvincibility(bool value)
+    {
+        isSpecialMoveInvincible = value;
+    }
 
     public List<LevelRange> levelRanges;
 
@@ -349,7 +355,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         //If the player is not currently invincible, reduce health and start invincibility
-        if (!isInvincible)
+        if (!isInvincible && !isSpecialMoveInvincible)
         {
             CurrentHealth -= dmg;
             // If there is a damage effect assigned, play it.

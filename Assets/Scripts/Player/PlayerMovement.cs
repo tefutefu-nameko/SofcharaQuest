@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     PlayerStats player;
     GameStateService gameStateService;
+
+    public bool isMovementLocked = false;
+    public void SetMovementLock(bool locked)
+    {
+        isMovementLocked = locked;
+    }
 
     void Start()
     {
@@ -51,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
 
     void InputManagement()
     {
+        if (isMovementLocked)
+        {
+            moveDir = Vector2.zero;
+            return;
+        }
+
         // Use service if available for robust check
         if (gameStateService != null && (gameStateService.IsGameOver || gameStateService.CurrentState != GameState.Gameplay))
         {
@@ -88,6 +100,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        if (isMovementLocked)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         if (gameStateService != null && (gameStateService.IsGameOver || gameStateService.CurrentState != GameState.Gameplay))
         {
             return;
