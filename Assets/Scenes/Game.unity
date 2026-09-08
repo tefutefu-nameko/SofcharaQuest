@@ -10175,6 +10175,8 @@ MonoBehaviour:
   slideInDuration: 0.3
   displayDuration: 1
   fadeOutDuration: 0.5
+  cutinScale: 0.5
+  cutinOffset: {x: 300, y: -200}
 --- !u!1 &781310442
 GameObject:
   m_ObjectHideFlags: 0
@@ -20551,6 +20553,7 @@ GameObject:
   - component: {fileID: 1842435943}
   - component: {fileID: 1842435945}
   - component: {fileID: 1842435946}
+  - component: {fileID: 1842435947}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -20718,6 +20721,7 @@ MonoBehaviour:
   lastHorizontalVector: 0
   lastVerticalVector: 0
   lastMovedVector: {x: 0, y: 0}
+  isMovementLocked: 0
 --- !u!95 &1842435941
 Animator:
   serializedVersion: 5
@@ -20880,6 +20884,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxGauge: 100
   currentGauge: 0
+--- !u!114 &1842435947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842435935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc271f8bb89749a7948fe6305d8c56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  giantScale: 5
+  giantDuration: 2
+  recoverDuration: 0.5
+  animationDuration: 0.3
+  cameraZoomMultiplier: 1.5
+  giantProjectilePrefab: {fileID: 5669176187624498669, guid: bf9786742b0d7934a804015e49be0558, type: 3}
+  projectileCount: 40
+  fireRate: 0.05
+  projectileSpeed: 10
+  bodyDamage: 100
+  bodyKnockback: 10
+  giantBurstSound: {fileID: 0}
+  fireSound: {fileID: 0}
+  cooldownSound: {fileID: 0}
 --- !u!1 &1856949974
 GameObject:
   m_ObjectHideFlags: 0

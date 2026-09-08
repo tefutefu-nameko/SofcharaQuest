@@ -14,6 +14,8 @@ public class SpecialMoveCutinUI : MonoBehaviour
     [SerializeField] float slideInDuration = 0.3f;
     [SerializeField] float displayDuration = 1.0f;
     [SerializeField] float fadeOutDuration = 0.5f;
+    [SerializeField] float cutinScale = 0.5f; // カットインのスケール
+    [SerializeField] Vector2 cutinOffset = new Vector2(300f, -200f); // カットインの表示位置のオフセット（中央から右下など）
 
     SpecialMoveSystem specialMoveSystem;
     Coroutine currentAnimation;
@@ -71,25 +73,23 @@ public class SpecialMoveCutinUI : MonoBehaviour
 
     IEnumerator CutinAnimationCoroutine()
     {
-        if (darkBackground) darkBackground.gameObject.SetActive(true);
+        // 背景暗転は無効化するため、非表示のままにする
+        if (darkBackground) darkBackground.gameObject.SetActive(false);
         if (cutinImage) cutinImage.gameObject.SetActive(true);
 
         // Reset colors
-        Color bgColor = darkBackground.color;
-        bgColor.a = 0;
-        if (darkBackground) darkBackground.color = bgColor;
-
         Color cutinColor = cutinImage.color;
         cutinColor.a = 1;
         cutinImage.color = cutinColor;
 
-        // Slide in from right (assuming anchored to center or right)
-        Vector2 startPos = new Vector2(Screen.width, 0); // Assuming Screen width is far enough
-        Vector2 endPos = Vector2.zero; // Assuming 0 is the center position
+        // Slide in from right
+        Vector2 startPos = new Vector2(Screen.width * 1.5f, cutinOffset.y); 
+        Vector2 endPos = cutinOffset; 
 
         if (cutinTransform != null)
         {
             cutinTransform.anchoredPosition = startPos;
+            cutinTransform.localScale = Vector3.one * cutinScale; // スケールを適用
         }
 
         float t = 0;
@@ -105,20 +105,11 @@ public class SpecialMoveCutinUI : MonoBehaviour
             {
                 cutinTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, ease);
             }
-            
-            if (darkBackground) {
-                bgColor.a = Mathf.Lerp(0, 0.5f, ease); // Darken up to 0.5 alpha
-                darkBackground.color = bgColor;
-            }
 
             yield return null;
         }
 
         if (cutinTransform != null) cutinTransform.anchoredPosition = endPos;
-        if (darkBackground) {
-            bgColor.a = 0.5f;
-            darkBackground.color = bgColor;
-        }
 
         // Display
         yield return new WaitForSeconds(displayDuration);
@@ -129,11 +120,6 @@ public class SpecialMoveCutinUI : MonoBehaviour
         {
             t += Time.deltaTime;
             float normalizedTime = t / fadeOutDuration;
-
-            if (darkBackground) {
-                bgColor.a = Mathf.Lerp(0.5f, 0, normalizedTime);
-                darkBackground.color = bgColor;
-            }
 
             cutinColor.a = Mathf.Lerp(1, 0, normalizedTime);
             cutinImage.color = cutinColor;

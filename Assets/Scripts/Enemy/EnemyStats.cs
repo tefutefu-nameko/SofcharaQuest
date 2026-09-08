@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -124,9 +124,9 @@ public class EnemyStats : EnemyBase
     }
     void ReturnEnemy()
     {
-        EnemySpawner es = FindObjectOfType<EnemySpawner>();
-        if (es == null || player == null) return;
-        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
+        // EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        // if (es == null || player == null) return;
+        // transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 
     protected override void Die()
