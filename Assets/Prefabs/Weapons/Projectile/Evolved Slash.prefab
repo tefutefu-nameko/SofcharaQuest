@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2665159033097262084}
   - component: {fileID: 8865251147594558863}
-  - component: {fileID: -5237902738602735952}
   - component: {fileID: -5794728221693116165}
   - component: {fileID: 8408384321083977620}
   - component: {fileID: -4700532569585412355}
+  - component: {fileID: 5214618822134903190}
+  - component: {fileID: -3889633409636744317}
   m_Layer: 0
-  m_Name: Golden Kashiwamochi Projectile
+  m_Name: Evolved Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,11 +31,11 @@ Transform:
   m_GameObject: {fileID: 3093094204294016729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8865251147594558863
 SpriteRenderer:
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 170300551
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db8e2363fc2f30d4c80012745c5d09a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4264655d7dae8c4f80ad736d5b06422, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,51 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-5237902738602735952
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093094204294016729}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
-    newSize: {x: 0.8, y: 0.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
-  m_EdgeRadius: 0
 --- !u!50 &-5794728221693116165
 Rigidbody2D:
   serializedVersion: 4
@@ -141,14 +97,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3093094204294016729}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -187,7 +143,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a7960ab85ed049f4a846fedafb94f6cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 985832bd1cc8b2f4b837db7151105ac4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.719
   m_Pitch: 1
@@ -273,3 +229,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &5214618822134903190
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093094204294016729}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 29.344475, y: 14.399999}
+    newSize: {x: 0.8, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -14.557066, y: -2.8926487}
+      - {x: -8.833775, y: -6.4152546}
+      - {x: 6.4748216, y: -7.0440917}
+      - {x: 12.965119, y: -3.8005347}
+      - {x: 14.707672, y: 1.461736}
+      - {x: 9.061966, y: 6.4440837}
+      - {x: 4.557209, y: 7.208389}
+      - {x: 3.5404449, y: 5.2893963}
+      - {x: -2.598629, y: 6.2648277}
+      - {x: -3.3399034, y: 5.901887}
+      - {x: 2.3295403, y: 3.6469111}
+      - {x: -4.3006105, y: 3.1938336}
+      - {x: -6.5315294, y: 1.2291363}
+      - {x: -3.3518882, y: 1.0603796}
+      - {x: 2.6481957, y: -0.55372244}
+      - {x: -3.2542784, y: -2.9722452}
+      - {x: -4.9081535, y: -1.8819757}
+      - {x: -6.8855543, y: -3.0604882}
+  m_UseDelaunayMesh: 0
+--- !u!114 &-3889633409636744317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093094204294016729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604394303b51154ab649c64f934c33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFrames:
+  - {fileID: 73914472, guid: c5165752095a8b04cb6ba9688386a836, type: 3}
+  - {fileID: -2098908086, guid: c5165752095a8b04cb6ba9688386a836, type: 3}
+  - {fileID: -1380135836, guid: c5165752095a8b04cb6ba9688386a836, type: 3}
+  - {fileID: -502671979, guid: c5165752095a8b04cb6ba9688386a836, type: 3}
+  - {fileID: 1915084400, guid: c5165752095a8b04cb6ba9688386a836, type: 3}
+  frameRate: 0.08
+  loopAnimation: 1
+  burstTime: 0.08
+  startScaleMultiplier: 0.4
+  maxScaleMultiplier: 1.25
+  fadeDuration: 0.15

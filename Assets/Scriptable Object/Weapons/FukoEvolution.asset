@@ -20,6 +20,7 @@ MonoBehaviour:
     name: Fuko Evolution (TBD)
     description: "\u30D6\u30FC\u30E1\u30E9\u30F3\u306E\u3088\u3046\u306B\u623B\u3063\u3066\u304F\u308B\u5F3E\u3092\uFF13\u767A\u653E\u3064"
     projectilePrefab: {fileID: -3256529825908621614, guid: 68359645efa89484594fcb00fa56edea, type: 3}
+    finisherPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:

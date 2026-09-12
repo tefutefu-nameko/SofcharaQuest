@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2031297471, guid: 0090d377f59c1a04db43618221a27856, type: 3}
   maxLevel: 3
-  evolutionData: []
+  evolutionData:
+  - name: "\u8D64\u3044\u5263"
+    condition: 0
+    consumes: 2
+    evolutionLevel: 3
+    catalysts: []
+    outcome:
+      itemType: {fileID: 11400000, guid: bf85f800648e4fc3b9213aafc6cbab60, type: 2}
+      level: 1
   behaviour: WhipWeapon
   baseStats:
     name: "\u8D64\u3044\u5263"
