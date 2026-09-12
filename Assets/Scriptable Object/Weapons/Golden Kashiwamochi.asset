@@ -20,6 +20,7 @@ MonoBehaviour:
     name: "\u91D1\u8272\u306E\u67CF\u9905\u306B\u9032\u5316!!"
     description: "\u91D1\u8272\u306B\u8F1D\u304F\u6700\u5F37\u306E\u67CF\u9905"
     projectilePrefab: {fileID: 8408384321083977620, guid: 78edfe7ce2de86641bbc23c17dee4f88, type: 3}
+    finisherPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:

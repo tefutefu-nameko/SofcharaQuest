@@ -30,6 +30,7 @@ MonoBehaviour:
     name: "\u67CF\u9905"
     description: "\u6B63\u9762\u306B\u5411\u304B\u3063\u3066\u67CF\u9905\u3092\u6295\u3052\u3064\u3051\u308B"
     projectilePrefab: {fileID: -1073754142621180257, guid: bf9786742b0d7934a804015e49be0558, type: 3}
+    finisherPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -53,6 +54,7 @@ MonoBehaviour:
   - name: "\u67CF\u9905 Lv.2"
     description: "\u67CF\u9905\u304C1\u3064\u5897\u3048\u308B"
     projectilePrefab: {fileID: -1073754142621180257, guid: bf9786742b0d7934a804015e49be0558, type: 3}
+    finisherPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -75,6 +77,7 @@ MonoBehaviour:
   - name: "\u67CF\u9905 Lv.3"
     description: "\u57FA\u790E\u30C0\u30E1\u30FC\u30B8\u304C\u5897\u3048\u3001\u3055\u3089\u306B\u67CF\u9905\u304C1\u3064\u5897\u3048\u308B"
     projectilePrefab: {fileID: -1073754142621180257, guid: bf9786742b0d7934a804015e49be0558, type: 3}
+    finisherPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:

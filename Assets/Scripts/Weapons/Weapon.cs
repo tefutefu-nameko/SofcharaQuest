@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +15,7 @@ public abstract class Weapon : Item
 
         [Header("Visuals")]
         public Projectile projectilePrefab; // If attached, a projectile will spawn every time the weapon cools down.
+        public Projectile finisherPrefab;   // If attached, can be used for combo finisher attacks (e.g. 3rd hit).
         public Aura auraPrefab; // If attached, an aura will spawn when weapon is equipped.
         public ParticleSystem hitEffect;
         public Rect spawnVariance;
@@ -32,6 +33,7 @@ public abstract class Weapon : Item
             result.name = s2.name ?? s1.name;
             result.description = s2.description ?? s1.description;
             result.projectilePrefab = s2.projectilePrefab ?? s1.projectilePrefab;
+            result.finisherPrefab = s2.finisherPrefab ?? s1.finisherPrefab;
             result.auraPrefab = s2.auraPrefab ?? s1.auraPrefab;
             result.hitEffect = s2.hitEffect == null ? s1.hitEffect : s2.hitEffect;
             result.spawnVariance = s2.spawnVariance != Rect.zero ? s2.spawnVariance : s1.spawnVariance;

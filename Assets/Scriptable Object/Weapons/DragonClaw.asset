@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a607af73fb0c42c4c845f92a36d44c94, type: 3}
+  m_Name: DragonClaw
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: bf26d032de363ab45ba7c0e7f450c4d1, type: 3}
+  maxLevel: 1
+  evolutionData: []
+  behaviour: DragonClawWeapon
+  baseStats:
+    name: "\u30CD\u30FC\u30EC\u306E\u9F8D\u306E\u529B\u304C\u899A\u9192!"
+    description: "\u708E\u3092\u7E8F\u3046\u7ADC\u306E\u722A\u3067\u524D\u65B9\u306E\u6575\u3092\u9023\u7D9A\u3067\u5F15\u304D\u88C2\u304F"
+    projectilePrefab: {fileID: 1000000000000006, guid: 0795d29e6c994f398fef55f2109cea09, type: 3}
+    finisherPrefab: {fileID: 8408384321083977620, guid: 972c18f4bec83054a8c4cdcab9065dbb, type: 3}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 2
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 30
+    damageVariance: 5
+    area: 1
+    speed: 0
+    cooldown: 1.1
+    projectileInterval: 0.2
+    knockback: 4
+    number: 2
+    piercing: 999
+    maxInstances: 0
+  linearGrowth: []
+  randomGrowth: []
