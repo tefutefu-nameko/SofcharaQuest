@@ -20893,23 +20893,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842435935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc271f8bb89749a7948fe6305d8c56b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cc0ce0dcdda14ec3ac8ae7c1369d340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  giantScale: 5
-  giantDuration: 2
+  duration: 5
   recoverDuration: 0.5
-  animationDuration: 0.3
-  cameraZoomMultiplier: 1.5
-  giantProjectilePrefab: {fileID: 5669176187624498669, guid: bf9786742b0d7934a804015e49be0558, type: 3}
-  projectileCount: 40
-  fireRate: 0.05
-  projectileSpeed: 10
-  bodyDamage: 100
-  bodyKnockback: 10
-  giantBurstSound: {fileID: 0}
-  fireSound: {fileID: 0}
-  cooldownSound: {fileID: 0}
+  movementSpeedMultiplier: 0.5
+  laserPrefab: {fileID: 0}
+  activateSound: {fileID: 0}
+  laserSound: {fileID: 0}
 --- !u!1 &1856949974
 GameObject:
   m_ObjectHideFlags: 0
